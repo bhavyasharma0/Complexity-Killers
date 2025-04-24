@@ -69,7 +69,11 @@ public class ARUCountingSortTests {
         for (int i = 0; i < 1000; i++) {
             expected[i] = i + 1; // Initialize in ascending order
         }
-        ARUCountingSort.ARUCountingSort(A);
+
+        // Measure time for ARU-Counting-sort
+        long timeTaken = Sorting.measureTime(() -> ARUCountingSort.ARUCountingSort(A));
+        System.out.println("Time for ARU Counting Sort: " + timeTaken + " ns");
+
         assertArrayEquals(expected, A);
     }
 
